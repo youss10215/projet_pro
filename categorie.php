@@ -33,6 +33,6 @@ $tabProduit = $categorie->getTabProduit();
         Nom:<?= $produit->nom ?></div>
     <?php }?>
     
-<script src="js/index.js" type="text/javascript"></script> 
+<script src="js/categorie.js" type="text/javascript"></script> 
 </body>
 </html>

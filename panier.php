@@ -20,6 +20,7 @@ $panier = $_SESSION['id_produit'];
 <div id="total"></div>
 </form>
 <a href="index.php">Accueil</a>
+<a href="commander.php">Commander</a>
 </body>
 <script>
     let prix = document.querySelectorAll("#prix");

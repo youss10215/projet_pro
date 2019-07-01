@@ -40,5 +40,9 @@ if (filter_input(INPUT_POST, 'submit')) {
         <input type="number" name="quantite" value="1" min="1" step="1"/><br/>
         <input type="submit" name="submit" value="Ajouter au panier" />
     </form>
+    <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button>
+    <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button>
+    <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button>
+<script src="js/detail.js" type="text/javascript"></script> 
 </body>
 </html>

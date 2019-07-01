@@ -9,9 +9,10 @@ class Produit implements ORM {
     public $dimension;
     public $ref;
     public $prix;
+    public $stock;
     private $categorie = null;
 
-    public function __construct($id_produit = null, $id_categorie = null, $nom = null, $couleur = null, $dimension = null, $ref = null, $prix = null) {
+    public function __construct($id_produit = null, $id_categorie = null, $nom = null, $couleur = null, $dimension = null, $ref = null, $prix = null, $stock = null) {
         $this->id_produit = $id_produit;
         $this->id_categorie = $id_categorie;
         $this->nom = $nom;
@@ -19,6 +20,7 @@ class Produit implements ORM {
         $this->dimension = $dimension;
         $this->ref = $ref;
         $this->prix = $prix;
+        $this->stock = $stock;
         }
 
         
@@ -33,7 +35,7 @@ class Produit implements ORM {
         // Persister $this en se basant sur sa PK
         $db = DBMySQL::getInstance();
         $id_produit = $this->id_produit ?: 'DEFAULT';
-        $req = "INSERT INTO produit VALUES ({$id_produit}, {$this->id_categorie}, {$db->esc($this->nom)}, {$db->esc($this->couleur)}, {$db->esc($this->dimension)}, {$db->esc($this->ref)}, {$this->prix}) ON DUPLICATE KEY UPDATE id_categorie = {$this->id_categorie}, nom = {$db->esc($this->nom)}, couleur = {$db->esc($this->couleur)}, dimension = {$db->esc($this->dimension)}, ref = {$db->esc($this->ref)}, prix = {$this->prix}";
+        $req = "INSERT INTO produit VALUES ({$id_produit}, {$this->id_categorie}, {$db->esc($this->nom)}, {$db->esc($this->couleur)}, {$db->esc($this->dimension)}, {$db->esc($this->ref)}, {$this->prix}, {$this->stock}) ON DUPLICATE KEY UPDATE id_categorie = {$this->id_categorie}, nom = {$db->esc($this->nom)}, couleur = {$db->esc($this->couleur)}, dimension = {$db->esc($this->dimension)}, ref = {$db->esc($this->ref)}, prix = {$this->prix}, stock = {$this->stock}";
         $db->xeq($req);
         $this->id_produit = $this->id_produit ?: $db->pk();
         return $this;
@@ -42,7 +44,7 @@ class Produit implements ORM {
         // Supprimer l'enregistrement correspondant à $this.
         if(!$this->id_produit)
             return false;
-        $req = "DELETE * FROM produit WHERE id_produit={$this->id_produit}";
+        $req = "DELETE  FROM produit WHERE id_produit={$this->id_produit}";
         return (bool) DBMySQL::getInstance()->xeq($req)->nb();
         
     }
