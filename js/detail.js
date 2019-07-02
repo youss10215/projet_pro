@@ -18,3 +18,4 @@ function supprimer(id_produit) {
 }
     location = `index.php`;
 }
+

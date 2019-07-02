@@ -97,9 +97,10 @@ $tabCategorie = Categorie::tab(1, "nom");
         </div>
         <div class="item">
             <label></label>
-            <input type="button" value="Annuler" onclick=""/>
+            <input type="button" value="Annuler" onclick="annuler()"/>
             <input type="submit" name="submit" value="Valider"/>
         </div>
 	</form>
+    <script src="js/editer.js" type="text/javascript"></script>
 </body>
 </html>

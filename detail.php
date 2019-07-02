@@ -1,5 +1,6 @@
 <?php
 require_once 'class/Cfg.php';
+$user = AbstractUser::getUserSession(User::class);
 $opt = ['options'=>['min_range' => 1]];
 $id_produit = filter_input(INPUT_GET, 'id_produit', FILTER_VALIDATE_INT, $opt);
 if(!$id_produit){
@@ -40,9 +41,11 @@ if (filter_input(INPUT_POST, 'submit')) {
         <input type="number" name="quantite" value="1" min="1" step="1"/><br/>
         <input type="submit" name="submit" value="Ajouter au panier" />
     </form>
+    <?php if($user && $user->admin == 1 ){ ?>
     <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button>
     <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button>
     <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button>
+    <?php } ?>
 <script src="js/detail.js" type="text/javascript"></script> 
 </body>
 </html>

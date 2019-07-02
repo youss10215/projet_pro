@@ -1,6 +1,5 @@
 <?php
 require_once 'class/Cfg.php';
-
 // Récupération de l'id_categorie dans l'url
 $opt = ['options'=>['min_range' => 1]];
 $id_categorie = filter_input(INPUT_GET, 'id_categorie', FILTER_VALIDATE_INT, $opt);

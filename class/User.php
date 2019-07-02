@@ -2,7 +2,7 @@
 
 class User extends AbstractUser {
     
-    public function __construct($id_user = null, $log = null, $mdp = null, $nom = null, $prenom = null, $telephone = null, $admin = null) {
+    public function __construct($id_user = null, $log = null, $mdp = null, $nom = null, $prenom = null, $telephone = null, $admin = 0) {
         $this->id_user = $id_user;
         $this->log = $log;
         $this->mdp = $mdp;
@@ -26,4 +26,12 @@ class User extends AbstractUser {
         $req = "SELECT * FROM user WHERE {$where} ORDER BY {$orderBy}" . ($limit ? " LIMIT {$limit}" : '');
         return DBMySQL::getInstance()->xeq($req)->tab(self::class);
     }
+
+    public function crypterMdp() {
+		$db = DBMySQL::getInstance();
+  		$mdp = password_hash($this->mdp, PASSWORD_DEFAULT);
+  		$req = "UPDATE user SET mdp = {$db->esc($mdp)} WHERE id_user = {$this->id_user}";
+  		$db->xeq($req);
+	}
+
 }

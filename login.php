@@ -29,7 +29,7 @@ if (filter_input(INPUT_POST, 'submit')) {
     <form name="form_login" action="login.php" method="post">
         <div class="item">
             <label>Identifiant</label>
-            <input name="log" size="10" maxlength="10" required="required"/>
+            <input name="log" size="20" maxlength="20" required="required"/>
         </div>
         <div class="item">
             <label>Mot de passe</label>
