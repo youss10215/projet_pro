@@ -31,7 +31,7 @@ class Cfg {
         // Autoload
         spl_autoload_register(function($class) {
             @include "class/{$class}.php";
-            @include "../framework/{$class}.php";
+            @include "framework/{$class}.php";
         });
 
         // Connexion DB

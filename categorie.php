@@ -7,15 +7,11 @@ if(!$id_categorie){
     header("Location:indispo.php");
     exit;
 }
-
-// Récupération de l'id_categorie pour afficher le nom
 $categorie = new Categorie($id_categorie);
 if(!$categorie->charger()){
     header('Location:indispo.php');
 	exit;
 }
-
-// Récupération des produits appartenant à la catégorie
 $tabProduit = $categorie->getTabProduit();
 ?>
 <!DOCTYPE html>

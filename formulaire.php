@@ -22,8 +22,7 @@ if (filter_input(INPUT_POST, 'submit')) {
   $user->sauver();
   $user->crypterMdp();
   header('Location:login.php');
-     
-}
+  }
 
 ?>
 <!DOCTYPE html>

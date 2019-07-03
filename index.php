@@ -1,7 +1,6 @@
 <?php
 require_once 'class/Cfg.php';
 $user = AbstractUser::getUserSession(User::class);
-var_dump($user);
 $tabCategorie = Categorie::tab();
 ?>
 <!DOCTYPE html>
