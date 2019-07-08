@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 body{
 	font-family: 'Montserrat', sans-serif;
 }
@@ -37,7 +36,7 @@ ul.profil li i{
 	display: block;
     height: 25px;
 	width: 25px;
-	font-size: 20px;
+	font-size: 22px;
     
 }
 .profil a{
@@ -70,11 +69,9 @@ input[type="file"]{
 @media screen and (max-width: 992px) {
 	
   }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 #logo{
-	margin-bottom: 30px;
 	margin-left: 28px;
-	font-size: 80px;
-}
+	}
 
 }

@@ -28,7 +28,7 @@ $tabCategorie = Categorie::tab();
                     <li><i class="fab fa-instagram"></i></li>
                     <li><i class="fab fa-linkedin"></i></li>
                 </ul>
-                <span class="d-lg-inline d-none">Tel : 06 12 60 49 44</span>
+                <span class="d-xl-inline d-none">Tel : 06 12 60 49 44</span>
             </div>
             <div id="logo" class="d-md-inline">
             <span>Sop'in</span>
@@ -70,8 +70,12 @@ $tabCategorie = Categorie::tab();
 		jQuery(document).ready(function($) {
 			jQuery('.stellarnav').stellarNav({
                 theme:'light',
-				breakpoint: 772,
-                position: 'static'
+				breakpoint: 767,
+                position: 'static',
+                sticky: 'false',
+                phoneBtn: '0612604944',
+                closeBtn: true,
+                locationBtn: 'https://www.google.com/maps'
 			});
 		});
 	</script>
