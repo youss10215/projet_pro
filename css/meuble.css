@@ -1,9 +1,11 @@
 @charset "utf-8";
-*, ::after, ::before {
-    box-sizing: border-box;
-}
+
 body{
 	font-family: 'Montserrat', sans-serif;
+}
+#header{
+	position: relative;
+	display: block;
 }
 ul.social{
 	text-decoration:none
@@ -42,9 +44,9 @@ ul.profil li i{
 	text-decoration: none;
 	color: #000;
 }
-.logo{
-	width: 200px;
-	max-width: 100%;
+#logo{
+	position: relative;
+	font-size: 40px;
 }
 form{
 	width: 50%;
@@ -63,4 +65,16 @@ form label{
 }
 input[type="file"]{
 	display: none;
+}
+
+@media screen and (max-width: 992px) {
+	
+  }
+@media screen and (max-width: 768px) {
+#logo{
+	margin-bottom: 30px;
+	margin-left: 28px;
+	font-size: 80px;
+}
+
 }
