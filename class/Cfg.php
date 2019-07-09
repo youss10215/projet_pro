@@ -7,7 +7,7 @@ class Cfg {
     private static $initDone = false;
 
     // Appli
-    const APP_TITRE = "Meuble";
+    const APP_TITRE = "Sop'in";
     // Images
     const IMG_TAB_MIME = ['image/jpeg'];
     const IMG_V_LARGEUR = 300; //px

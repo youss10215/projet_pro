@@ -1,0 +1,114 @@
+@charset "utf-8";
+body{
+    font-family:$police;
+}
+// Header //
+#header{
+    display: $display;
+	position: $position;
+}
+ul.social{
+    text-decoration:none;
+    li{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 .3rem;
+        i{
+            display: $display;
+            background-color: $couleur;
+            color: #fff;
+            height: 25px;
+            width: 25px;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 25px;
+            font-size: .8rem;
+        }
+    }
+}
+ul.social+span {
+    letter-spacing: .05rem;
+    font-size: .8rem;
+    font-weight: 500;
+    color: #000;
+}
+ul.profil li i{
+	display: $display;
+    height: 25px;
+	width: 25px;
+	font-size: 22px;
+}
+.profil a{
+    color: $couleur;
+	text-decoration: none;
+}
+#logo{
+	position: $position;
+    font-size: 40px;
+    a{
+        color: $couleur;
+        text-decoration: none;
+    }
+}
+.stellarnav ul li a{
+    text-transform: uppercase;
+    font-size: .8rem;
+    &:hover{
+        font-weight: 700;
+        &::before{
+            content:' / ';
+        }
+    }
+    
+}
+h1{
+    text-align: center;
+    text-transform: none;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    line-height: 1.2;
+}
+
+// Section //
+
+.sectionTitle{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    width: 100%;
+    font-weight: 300;
+}
+.card{
+    border: none;
+}
+
+
+// Formulaire //
+
+form{
+	width: 50%;
+	margin: 20px 10px 10px 0;
+}
+form div.item{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+}
+form label{
+	min-width: 150px;
+	margin: 5px;
+	padding: 2px;
+	font-weight: bold;
+}
+input[type="file"]{
+	display: none;
+}
+
+@media screen and (max-width: 767px) {
+#logo{
+	margin-left: 28px;
+	}
+
+}
