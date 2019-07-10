@@ -1,7 +1,5 @@
 <?php
 require_once 'class/Cfg.php';
-$user = AbstractUser::getUserSession(User::class);
-$tabCategorie = Categorie::tab();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,7 +35,7 @@ $tabCategorie = Categorie::tab();
     </div>
     <section id="realisation"class="pt-5 pb-3">
         <div class="container py-0">
-            <h3 class="sectionTitle">Mes dernières réalisations</h3>
+            <h3 class="section_title">Mes dernières réalisations</h3>
             <div class="card-group text-center">
                 <div class="card" style="margin-right:1px">
                     <img src="img/appt.jpg" class="card-img-top" alt="...">
@@ -56,34 +54,38 @@ $tabCategorie = Categorie::tab();
     </section>
     <section id="meuble" class="pt-5">
         <div class="container py-0">
-            <h3 class="sectionTitle">Mes Meubles</h3>  
+            <h3 class="section_title">Mes Meubles</h3>  
             <div class="card-group text-center">
                 <div class="card">
                     <img src="img/prod_11_v.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">Guéridon</h5>
-                    <p class="prix card-text">309,90€</p>
+                    <h5 class="name card-title">Guéridon</h5>
+                    <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                    <p class="price card-text">309,90€</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="img/prod_12_v.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">Banc</h5>
-                    <p class="prix card-text">109,90€</p>
+                    <h5 class="name card-title">Banc</h5>
+                    <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                    <p class="price card-text">109,90€</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="img/prod_13_v.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">Banquette</h5>
-                    <p class="prix card-text">219,90€</p>
+                    <h5 class="name card-title">Banquette</h5>
+                    <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                    <p class="price card-text">219,90€</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="img/prod_14_v.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">Chauffeuse</h5>
-                    <p class="prix card-text">199,90€</p>
+                    <h5 class="name card-title">Chauffeuse</h5>
+                    <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                    <p class="price card-text">199,90€</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +102,7 @@ $tabCategorie = Categorie::tab();
 		jQuery(document).ready(function($) {
 			jQuery('.stellarnav').stellarNav({
                 theme:'light',
-				breakpoint: 868,
+				breakpoint: 891,
                 position: 'static',
                 phoneBtn: '0612604944',
                 locationBtn: 'https://www.google.com/maps'

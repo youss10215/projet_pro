@@ -24,11 +24,9 @@ if (filter_input(INPUT_POST, 'submit')) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail</title>
-</head>
+<?php require_once 'inc/head.php' ?>
+<html lang="fr">  
+<?php require_once 'inc/header.php' ?>
 <body>
     <a href="index.php">Accueil</a>
     <div>Nom : <?= $produit->nom ?></div>

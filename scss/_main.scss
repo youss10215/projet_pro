@@ -72,7 +72,7 @@ h1{
 
 // Section //
 
-.sectionTitle{
+.section_title{
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2rem;
@@ -83,17 +83,23 @@ h1{
 .card{
     border: none;
 }
-.card-title{
+.name{
     font-size: .9rem;
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: .8rem;
 }
-.prix{
+.price{
     color: #000;
     font-weight: 900;
     line-height: normal;
     font-size: .9rem;
+}
+.marque{
+    display: block;
+    font-size: 11px;
+    margin-top: -10px;
+    margin-bottom: 15px;
 }
 // Formulaire //
 

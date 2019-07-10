@@ -2,7 +2,7 @@
 require_once 'class/Cfg.php';
 $user = AbstractUser::getUserSession(User::class);
 $tabCategorie = Categorie::tab();
-?>
+?> 
 <header id="header" class="container-fluid pb-4">
     <div id="top-nav row">
         <div class="row justify-content-between pt-3 px-md-3 mb-3">
@@ -51,7 +51,7 @@ $tabCategorie = Categorie::tab();
                 <?php foreach ($tabCategorie as $categorie) {?>
                 <li><a href="javascript:categorie(<?= $categorie->id_categorie ?>)"><?= $categorie->nom ?></a>
                 </li>
-                <?php }?>
+                <?php } ?>
             </ul>
         </div>
     </div>

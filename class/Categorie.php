@@ -36,7 +36,7 @@ class Categorie {
     }
     static function tab($where = 1, $orderBy = 1, $limit = null){
         // Retourne un tableau d'enregistrements sous la forme d'instances.
-        $req = "SELECT * FROM categorie WHERE {$where} ORDER BY {$orderBy}".($limit ? "LIMIT {$limit}" : '');
+        $req = "SELECT * FROM categorie WHERE {$where} ORDER BY {$orderBy} ".($limit ? "LIMIT {$limit}" : '');
         return DBMySQL::getInstance()->xeq($req)->tab(self::class);
     }
 

@@ -1,7 +1,5 @@
 <?php
 require_once 'class/Cfg.php';
-$tabCategorie = Categorie::tab();
-// Récupération de l'id_categorie dans l'url
 $opt = ['options'=>['min_range' => 1]];
 $id_categorie = filter_input(INPUT_GET, 'id_categorie', FILTER_VALIDATE_INT, $opt);
 if(!$id_categorie){
@@ -11,22 +9,45 @@ if(!$id_categorie){
 $categorie = new Categorie($id_categorie);
 if(!$categorie->charger()){
     header('Location:indispo.php');
-	exit;
+    exit;
 }
+$nom = $categorie->nom;
 $tabProduit = $categorie->getTabProduit();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
     <?php require_once 'inc/head.php' ?>
 <body>
-    <?php require_once 'inc/header.php' ?>
-    <a href="index.php">Accueil</a>
-    <div><?= $categorie->nom ?></div>
-    <?php foreach ($tabProduit as $produit) {?>
-    <div onclick="detail(<?= $produit->id_produit ?>)">
-        Nom:<?= $produit->nom ?></div>
-    <?php }?>
-    
+    <?php  require_once 'inc/header.php' ?>
+    <div class="container">
+        <div class="link mb-4">
+            <nav>
+                <a href="index.php">
+                    <span>Sop'in</span>
+                </a>
+                <span><?= $nom ?></span>
+            </nav>
+        </div>
+        <div class="category my-5 py-2">
+            <h2><?= $nom ?></h2>
+        </div>
+        <div class="all_products row"> 
+            <?php foreach ($tabProduit as $produit) {?>
+            <div class="col-6 col-lg-4 col-xl-4 ">
+                <div class="product text-center" onclick="detail(<?= $produit->id_produit ?>)">
+                    <div class="image">
+                    <img src="img/prod_<?= $produit->id_produit ?>_v.jpg" width="300" height="300" alt="">
+                    </div>
+                    <div class="description">
+                        <h5 class="name"><?= $produit->nom ?></h5>
+                        <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                        <span class="price"><?= $produit->prix ?>€</span>
+                    </div>
+                </div>
+            </div>
+            <?php }?>    
+        </div>
+    </div>  
 <script src="js/categorie.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
