@@ -28,22 +28,74 @@ if (filter_input(INPUT_POST, 'submit')) {
 <html lang="fr">  
 <?php require_once 'inc/header.php' ?>
 <body>
-    <a href="index.php">Accueil</a>
-    <div>Nom : <?= $produit->nom ?></div>
-    <div>Couleur :<?= $produit->couleur ?></div>
-    <div>Dimensions :<?= $produit->dimension ?></div>
-    <div>Reférence :<?= $produit->ref ?></div>
-    <div>Prix :<?= $produit->prix?></div>
-    <div>Stock :<?= $produit->stock?></div>
-    <form name="form_detail"  method="post">
-        <input type="number" name="quantite" value="1" min="1" step="1"/><br/>
-        <input type="submit" name="submit" value="Ajouter au panier" />
-    </form>
-    <?php if($user && $user->admin == 1 ){ ?>
-    <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button>
-    <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button>
-    <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button>
-    <?php } ?>
+    <div class="container">
+        <div class="link mb-4">
+            <nav>
+                <a href="index.php">
+                    <span>Sop'in</span>
+                </a>
+                <a href="javascript:categorie(<?= $produit->id_categorie ?>)">
+                    <span><?= $produit->categorie->nom ?></span>
+                </a>
+                <span><?= $produit->nom ?></span>
+            </nav>
+        </div>
+        <section>
+            <div class="product py-5 mt-4 mb-5">
+                <div class="row position-relative">
+                    <div class="product_image col-xl-6 col-lg-7 col-12">
+                        <img src="img/prod_<?= $id_produit ?>_p.jpg" width="550" height="550" alt="">
+                    </div>
+                    <div class="product_description col-xl-6 col-lg-5 col-12">
+                        <span class="product_marque"><?= Cfg::APP_TITRE ?></span>
+                        <h1 class="product_name"><?= $produit->nom ?></h1>
+                        <a href="#product_detail">Détails</a><br>
+                        <span class="product_price"><?= $produit->prix ?>€</span><br>
+                        <span>En stock</span>
+                        <div class="product_cart">
+                        <form class="input-group" name="form_detail"  method="post">
+                            <input type="number" name="quantite" value="1" min="1" step="1"/><br/>
+                            <input type="submit" name="submit" value="Ajouter au panier" />
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="product_detail">
+                <h3 class="section_title">Description détaillée</h3>
+                <div class="row">
+                    <div class="product_detail_description col-8">
+                        <div>Couleur :<?= $produit->couleur ?></div>
+                        <div>Dimensions :<?= $produit->dimension ?></div>
+                        <div>Reférence :<?= $produit->ref ?></div>
+                    </div>
+                    <div class="admin">
+                        <?php if($user && $user->admin == 1 ){ ?>
+                        <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button><br>
+                        <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button><br>
+                        <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 <script src="js/detail.js" type="text/javascript"></script> 
+<script src="js/index.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Stellanarv -->
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script type="text/javascript" src="js/stellarnav.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        jQuery('.stellarnav').stellarNav({
+            theme:'light',
+            breakpoint: 868,
+            position: 'static'
+        });
+    });
+</script> 
 </body>
 </html>

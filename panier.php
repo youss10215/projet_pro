@@ -1,6 +1,7 @@
 <?php
 require_once 'class/Cfg.php';
 $panier = $_SESSION['id_produit'];
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,6 +14,7 @@ $panier = $_SESSION['id_produit'];
     if($panier){
     foreach($panier as $element){
         var_dump($element[0]->id_produit);
+        var_dump($element[1]);
         $prix = $element[1] * $element[0]->prix;
         $nom = $element[0]->nom;
     ?>

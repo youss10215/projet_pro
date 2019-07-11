@@ -1,19 +1,27 @@
 <?php
 require_once 'class/Cfg.php';
-$panier = $_SESSION['id_produit']; 
-var_dump($panier);
-foreach($panier as $element){
-    $prix = $element[1] * $element[0]->prix;
-}
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Commander</title>
 </head>
 <body> 
-    
-<div>TOTAL : </div> 
+<a href="logoutPanier.php">Accueil</a> 
+<div>TOTAL</div> 
+<div id="final"></div> 
+<script>
+let queryString = decodeURIComponent(window.location.search);
+console.log(queryString);
+queryString = queryString.substring(1);
+console.log(queryString);
+let queries = queryString.split("&");
+console.log(queries);
+for (let i = 0; i < queries.length; i++)
+{
+  document.querySelector("#final").innerHTML = queries[i];
+}
+</script>
 </body>
 </html>

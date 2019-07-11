@@ -49,7 +49,8 @@ $tabCategorie = Categorie::tab();
                 <li><a href="index.php">Accueil</a>
                 </li>
                 <?php foreach ($tabCategorie as $categorie) {?>
-                <li><a href="javascript:categorie(<?= $categorie->id_categorie ?>)"><?= $categorie->nom ?></a>
+                <li>
+                    <a href="javascript:categorie(<?= $categorie->id_categorie ?>)"><?= $categorie->nom ?></a>
                 </li>
                 <?php } ?>
             </ul>
