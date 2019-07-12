@@ -43,14 +43,14 @@ if (filter_input(INPUT_POST, 'submit')) {
         <section>
             <div class="product py-5 mt-4 mb-5">
                 <div class="row position-relative">
-                    <div class="product_image col-xl-6 col-lg-7 col-12">
+                    <div class="product_image col-12 col-lg-7 col-xl-6">
                         <img src="img/prod_<?= $id_produit ?>_p.jpg" width="550" height="550" alt="">
                     </div>
-                    <div class="product_description col-xl-6 col-lg-5 col-12">
+                    <div class="product_description col-12 col-lg-5 col-xl-6">
                         <span class="product_marque"><?= Cfg::APP_TITRE ?></span>
                         <h1 class="product_name"><?= $produit->nom ?></h1>
                         <a href="#product_detail">Détails</a><br>
-                        <span class="product_price"><?= $produit->prix ?>€</span><br>
+                        <span class="product_price"><?= $produit->prix ?>€</span><br>   
                         <span>En stock</span>
                         <div class="product_cart">
                         <form class="input-group" name="form_detail"  method="post">

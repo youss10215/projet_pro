@@ -6,7 +6,7 @@ $tabCategorie = Categorie::tab();
 <header id="header" class="container-fluid pb-4">
     <div id="top-nav row">
         <div class="row justify-content-between pt-3 px-md-3 mb-3">
-            <div class="col-5 align-self-center d-none d-md-block pl-0">
+            <div class="col-5 col-md-4 col-lg-5 align-self-center d-none d-md-block pl-0">
                 <ul class="social p-0 pl-lg-2 mr-5 d-md-inline d-none">
                     <li><i class="fab fa-facebook-f"></i></li>
                     <li><i class="fab fa-pinterest-p"></i></li>
@@ -18,7 +18,7 @@ $tabCategorie = Categorie::tab();
             <div id="logo" class="d-md-inline">
             <a href="index.php">Sop'in</a>
             </div>
-            <div class="col-5 align-self-center text-right mr-3 mr-md-0">
+            <div class="col-4 col-lg-5 align-self-center text-right mr-3 mr-md-0">
                 <ul class="profil m-0 list-unstyled list-inline">
                     <?php if ($user) {?>
                     <li class="list-inline-item align-middle">

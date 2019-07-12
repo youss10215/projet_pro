@@ -67,10 +67,6 @@ ul.profil li i {
   font-weight: 700;
 }
 
-.stellarnav ul li a:hover::before {
-  content: ' / ';
-}
-
 h1 {
   text-align: center;
   text-transform: none;
@@ -93,18 +89,17 @@ h1 {
   border: none;
 }
 
+.card a {
+  text-decoration: none;
+  color: #000;
+}
+
 .name {
   font-size: .9rem;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: .8rem;
-}
-
-.price {
-  color: #000;
-  font-weight: 900;
-  line-height: normal;
-  font-size: .9rem;
+  text-decoration: none;
 }
 
 .marque {
@@ -112,6 +107,12 @@ h1 {
   font-size: 11px;
   margin-top: -10px;
   margin-bottom: 15px;
+}
+
+.price {
+  font-weight: 900;
+  line-height: normal;
+  font-size: .9rem;
 }
 
 form {
@@ -139,6 +140,12 @@ input[type="file"] {
   display: none;
 }
 
+@media screen and (max-width: 992px) {
+  .carousel-item {
+    height: 400px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #logo {
     margin-left: 28px;
@@ -163,12 +170,25 @@ input[type="file"] {
 }
 
 .product_marque {
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .product_name {
+  margin-bottom: 20px;
   text-align: left;
-  font-size: 24px;
-  font-weight: normal;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.product_description a {
+  color: #000;
+  font-size: .8rem;
+  text-decoration: underline;
+}
+
+.product_price {
+  font-size: 2em;
 }
 /*# sourceMappingURL=app.css.map */

@@ -1,10 +1,20 @@
-.product{
-   
-}.product_marque{
-    font-size: 20px;
+.product_marque{
+    font-size: 1rem;
 }
 .product_name{
+    margin-bottom: 20px;
     text-align: left;
-    font-size: 24px;
-    font-weight: normal;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+.product_description  a{
+        color:$couleur;
+        font-size: .8rem;
+        text-decoration: underline;
+        
+}
+.product_price{
+    font-size: 2em;
 }

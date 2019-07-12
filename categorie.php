@@ -13,6 +13,7 @@ if(!$categorie->charger()){
 }
 $nom = $categorie->nom;
 $tabProduit = $categorie->getTabProduit();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
