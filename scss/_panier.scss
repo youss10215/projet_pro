@@ -1,7 +1,7 @@
 .table_product_cart{
     width: 100%;
     border: 1px solid rgba(0,0,0,.1);
-    margin: 0 1px 24px 0;
+    margin-bottom: 24px;
     text-align: left;
     tr{
         display: table-row;
@@ -67,24 +67,46 @@
     }
 }
 #total::after{
+    content: '€'
+}
+.cart_subtotal::after{
+    content: '€'
 }
 .check_out:hover {
     letter-spacing: 0.8em;
-    background-color: #000;
+    background-color: $couleur;
 }
 .check_out {
     color: white;
-}
-button {
     font-size: .8rem;
     height: 3em;
     width: 100%;
     padding: 1.5em auto;
     margin: 1em auto;
-    background-color: #000;
+    background-color: $couleur;
     border: none;
     border-radius: 3px;
     text-transform: uppercase;
     letter-spacing: 0.5em;
     transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+.back{
+    font-size: .8rem;
+    margin: 0;
+    line-height: 1;
+    position: relative;
+    padding: .618em 1em;
+    background-color: #ebe9eb;
+    border: 0;
+    display: inline-block;
+    border-radius: 0;
+    text-transform: uppercase;
+    &:hover{
+        background-color: #e0e0e0;
+    }
+    a{
+        text-decoration: none;
+        color: #515151;
+        font-weight: 300;
+    }
 }

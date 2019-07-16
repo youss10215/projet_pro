@@ -54,8 +54,8 @@ if (filter_input(INPUT_POST, 'submit')) {
                         <span>En stock</span>
                         <div class="product_cart">
                         <form class="input-group" name="form_detail"  method="post">
-                            <input type="number" name="quantite" value="1" min="1" step="1"/><br/>
-                            <input type="submit" name="submit" value="Ajouter au panier" />
+                            <input type="number" name="quantite" value="1" min="1" step="1"style="width:10%"/><br/>
+                            <input type="submit" name="submit" class="check_out" value="Ajouter au panier" />
                         </form>
                         </div>
                     </div>

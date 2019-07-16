@@ -1,5 +1,7 @@
 <?php
 require_once 'class/Cfg.php';
+$register_log = ($_SESSION['log']);
+$register_mdp = ($_SESSION['mdp']);
 $tabErreur = [];
 $user = new User();
 if (filter_input(INPUT_POST, 'submit')) {
@@ -27,40 +29,52 @@ if (filter_input(INPUT_POST, 'submit')) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulaire</title>
-</head>
+    <?php require_once 'inc/head.php' ?>
 <body>
-<div class="categorie">Créez votre compte</div>
-    <div class="erreur"><?= implode('<br/>', $tabErreur) ?></div>
-    <form name="form_formulaire" method="post">
-        <div class="item">
-            <label>Nom</label>
-            <input name="nom" value="" maxlength="50" required="required"/>
+    <?php  require_once 'inc/header.php' ?>
+    <div class="container">
+        <div class="link mb-4">
+            <nav>
+                <a href="index.php">
+                    <span>Sop'in</span>
+                </a>
+                <span>Créer mon compte</span>
+            </nav>
         </div>
-        <div class="item">
-            <label>Prénom</label>
-            <input name="prenom" value="" maxlength="20" required="required"/>
+        <div class="mt-5 mb-4 py-2">
+            <h2>Créer mon compte</h2>
         </div>
-        <div class="item">
-            <label>Telephone</label>
-            <input type="tel" name="telephone" value="" maxlength="20" required="required"/>
+        <div class="row">
+            <div class="form_form col-6">
+                <div class="erreur"><?= implode('<br/>', $tabErreur) ?></div>
+                <form name="form_formulaire" method="post">
+                    <input class="form-control" name="nom" value="" placeholder="Nom" maxlength="50" required="required"/>
+                    <input class="form-control" name="prenom" value="" placeholder="Prénom" maxlength="20" required="required"/>
+                    <input class="form-control" type="tel" name="telephone" value="" placeholder="Téléphone" maxlength="20" required="required"/>
+                    <input class="form-control" type="email" name="log" value="<?= $register_log ?>" placeholder="E-mail" maxlength="30" required="required" multiple/>
+                    <input class="form-control" type="password" name="mdp" value="<?= $register_mdp ?>" placeholder="Mot de passe" maxlength="255"  required="required"/>
+                    <div class="">
+                    <input class="check_out" type="submit" name="submit" value="S'inscrire" style="width:50%"/>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="item">
-            <label>E-mail</label>
-            <input type="email" name="log" value="" maxlength="30" required="required" multiple/>
-        </div>
-        <div class="item">
-            <label>Mot de passe</label>
-            <input type="password" name="mdp" value="" maxlength="255"  required="required"/>
-        </div>
-        <div class="item">
-            <label></label>
-            <input type="button" value="Annuler" onclick="annuler()"/>
-            <input type="submit" name="submit" value="Valider"/>
-        </div>
-	</form>
-  <script src="js/editer.js" type="text/javascript"></script>
+    </div>
+<script src="js/index.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Stellanarv -->
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script type="text/javascript" src="js/stellarnav.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        jQuery('.stellarnav').stellarNav({
+            theme:'light',
+            breakpoint: 868,
+            position: 'static'
+        });
+    });
+</script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 <?php
 require_once 'class/Cfg.php';
 $panier = $_SESSION['id_produit'];
+if(!isset($panier)){
+    header("Location:panierVide.php");
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,19 +25,14 @@ $panier = $_SESSION['id_produit'];
             <h2>Panier</h2>
         </div>
         <div class="panier">
+            <?php
+            if(!$panier){ 
+            ?>
+            <p>Votre panier est vide</p>
+            <button class="back"><a href="index.php">Retour à l'accueil</a></button>
+            <?php } else{ 
+            ?>
             <div class="table_cart mb-4">
-                 <?php
-                    if($panier){
-                    foreach($panier as $element){
-                        $id = $element[0]->id_produit;
-                        $nom = $element[0]->nom;
-                        $ref = $element[0]->ref;
-                        $couleur = $element[0]->couleur;
-                        $quantite = $element[1];
-                        $prix = $element[0]->prix;
-                        $sousTotal = $element[1] * $element[0]->prix;
-                        
-                ?>
                 <table class="table_product_cart">
                     <thead>
                         <tr>
@@ -45,6 +45,16 @@ $panier = $_SESSION['id_produit'];
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                    foreach($panier as $element){
+                        $id = $element[0]->id_produit;
+                        $nom = $element[0]->nom;
+                        $ref = $element[0]->ref;
+                        $couleur = $element[0]->couleur;
+                        $quantite = $element[1];
+                        $prix = $element[0]->prix;
+                        $sousTotal = $element[1] * $element[0]->prix;
+                    ?>
                         <tr>
                             <td class="cart_thumbnail"><img src="img/prod_<?= $id ?>_t.jpg" alt=""></td>
                             <td class="cart_nom">
@@ -60,13 +70,12 @@ $panier = $_SESSION['id_produit'];
                             <td id="prix" class="cart_subtotal"><?= $sousTotal ?></td>
                             <td class="cart_remove" onclick="supprimerPanier(<?= $id ?>)"><i class="fas fa-times"></i></td>
                         </tr>
-                        <?php } ?>
                     </tbody>
+                    <?php } ?>
                 </table>
             </div>
             <div class="total_part row">
-                <div class="empty_total col-6"></div>
-                <div class="cart_total col-6">
+                <div class="cart_total col-6 offset-6">
                     <span class="cart_total_span">Total panier</span>
                     <table class="table_total mt-4">
                         <tbody>
@@ -85,8 +94,6 @@ $panier = $_SESSION['id_produit'];
                     </div>
                 </div>
             </div>
-            <?php } else{?>
-                <p>Votre panier est vide</p>
             <?php } ?>
         </div>
     </div>
@@ -102,4 +109,20 @@ $panier = $_SESSION['id_produit'];
     console.log(queryString);
 </script>
 <script src="js/panier.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Stellanarv -->
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script type="text/javascript" src="js/stellarnav.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        jQuery('.stellarnav').stellarNav({
+            theme:'light',
+            breakpoint: 868,
+            position: 'static'
+        });
+    });
+</script> 
 </html>
