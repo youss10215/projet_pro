@@ -90,7 +90,9 @@ if (filter_input(INPUT_POST, 'register')) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
             breakpoint: 868,
-            position: 'static'
+            position: 'static',
+            phoneBtn: '0612604944',
+            locationBtn: 'https://www.google.com/maps'
         });
     });
 </script>

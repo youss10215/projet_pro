@@ -9,13 +9,25 @@ function modifier(id_produit) {
 
 function supprimer(id_produit) {
     if (confirm("Vraiment supprimer ?")) {
-    let url = `supprimer.php?id_produit=${id_produit}`;
-    fetch(url).then(response => {
-        if (response.ok)
-            location.reload();
-    })
-    .catch(error => console.error(error));
+        let url = `supprimer.php?id_produit=${id_produit}`;
+        fetch(url).then(response => {
+            if (response.ok)
+                location.reload();
+        })
+        .catch(error => console.error(error));
 }
     location = `index.php`;
 }
 
+function supprimerImage(evt, id_produit) {
+	evt.stopPropagation();
+	if (confirm("Vraiment supprimer l'image ?")) {
+		let url = `supprimerImage.php?id_produit=${id_produit}`;
+		fetch(url)
+        .then(response => {
+            if (response.ok)
+                location.reload();
+        })
+        .catch(error => console.error(error));
+	}
+}

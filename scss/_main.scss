@@ -87,6 +87,7 @@ h1{
     }
 }
 .name{ 
+    margin-top: 15px;
     font-size: .9rem;
     text-transform: uppercase;
     font-weight: 600;
@@ -116,13 +117,21 @@ h4{
 input[type="file"]{
 	display: none;
 }
-
+#vignette{
+	width: 300px;
+	height: 300px;
+	padding: 3px;
+	border: dashed 2px #ccc;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-origin: content-box;
+	background-size: contain;
+}
+label{
+    font-weight: bold; 
+}
 @media screen and (max-width: 992px) {
-    .carousel-item{
-        height: 400px;
-        }
-    }
-
+}
 @media screen and (max-width: 767px) {
 #logo{
 	margin-left: 28px;

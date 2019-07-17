@@ -97,6 +97,7 @@ h1 {
 }
 
 .name {
+  margin-top: 15px;
   font-size: .9rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -132,10 +133,19 @@ input[type="file"] {
   display: none;
 }
 
-@media screen and (max-width: 992px) {
-  .carousel-item {
-    height: 400px;
-  }
+#vignette {
+  width: 300px;
+  height: 300px;
+  padding: 3px;
+  border: dashed 2px #ccc;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+  background-size: contain;
+}
+
+label {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 767px) {
@@ -321,5 +331,10 @@ input[type="file"] {
 
 .form_form .form-control {
   margin-bottom: 20px;
+}
+
+.erreur {
+  margin-bottom: 10px;
+  color: red;
 }
 /*# sourceMappingURL=app.css.map */

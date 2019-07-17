@@ -15,14 +15,14 @@ require_once 'class/Cfg.php';
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="bien carousel-item active">
-                <img src="img/banner1.jpg" class="d-block w-100" width="1054" height="750" alt="...">
+                <div class="carousel-item active">
+                <img src="img/banner1.jpg" class="w-100" height="700" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/banner2.jpg" class="d-block w-100" width="1054" height="612" alt="...">
+                <img src="img/banner2.jpg" class="w-100" height="700" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/banner3.jpg" class="d-block w-100" width="1054" height="612" alt="...">
+                <img src="img/banner3.jpg" class="w-100" height="700" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

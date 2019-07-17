@@ -14,6 +14,8 @@ class Cfg {
     const IMG_V_HAUTEUR = 300; //px
     const IMG_P_LARGEUR = 450; //px
     const IMG_P_HAUTEUR = 450; //px
+    const IMG_T_LARGEUR = 50; //px
+    const IMG_T_HAUTEUR = 50; //px
     // DB
     const DB_NAME = 'meuble';
     const DB_LOG = 'root';

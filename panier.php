@@ -56,7 +56,7 @@ if(!isset($panier)){
                         $sousTotal = $element[1] * $element[0]->prix;
                     ?>
                         <tr>
-                            <td class="cart_thumbnail"><img src="img/prod_<?= $id ?>_t.jpg" alt=""></td>
+                            <td class="cart_thumbnail text-center"><img src="img/prod_<?= $id ?>_t.jpg" alt=""></td>
                             <td class="cart_nom">
                                 <span><?= $nom ?> -</span>
                                 <span class="cart_ref"><?= $ref?> ,</span>
@@ -121,7 +121,9 @@ if(!isset($panier)){
         jQuery('.stellarnav').stellarNav({
             theme:'light',
             breakpoint: 868,
-            position: 'static'
+            position: 'static',
+            phoneBtn: '0612604944',
+            locationBtn: 'https://www.google.com/maps'
         });
     });
 </script> 

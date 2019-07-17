@@ -73,7 +73,8 @@ if (filter_input(INPUT_POST, 'submit')) {
                         <?php if($user && $user->admin == 1 ){ ?>
                         <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button><br>
                         <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button><br>
-                        <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button>
+                        <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button><br>
+                        <button onclick="supprimerImage(event, <?= $produit->id_produit ?>)">Supprimer l'image</button>
                         <?php } ?>
                     </div>
                 </div>
@@ -93,7 +94,9 @@ if (filter_input(INPUT_POST, 'submit')) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
             breakpoint: 868,
-            position: 'static'
+            position: 'static',
+            phoneBtn: '0612604944',
+            locationBtn: 'https://www.google.com/maps'
         });
     });
 </script> 

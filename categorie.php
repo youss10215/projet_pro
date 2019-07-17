@@ -37,7 +37,7 @@ $tabProduit = $categorie->getTabProduit();
                 $id = $produit->id_produit 
             ?>
             <div class="col-6 col-lg-4 col-xl-4 ">
-                <div class="category_product text-center" onclick="detail(<?= $id ?>)">
+                <div class="category_product text-center mb-5" onclick="detail(<?= $id ?>)">
                     <div class="category_image">
                     <img src="img/prod_<?= $id ?>_v.jpg" width="300" height="300" alt="">
                     </div>
@@ -64,7 +64,9 @@ $tabProduit = $categorie->getTabProduit();
         jQuery('.stellarnav').stellarNav({
             theme:'light',
             breakpoint: 868,
-            position: 'static'
+            position: 'static',
+            phoneBtn: '0612604944',
+            locationBtn: 'https://www.google.com/maps'
         });
     });
 </script> 

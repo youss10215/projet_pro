@@ -11,15 +11,15 @@ if (filter_input(INPUT_POST, 'submit')) {
 	$user->log = filter_input(INPUT_POST, 'log', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $user->mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   if (!$user->nom)
-		$tabErreur[] = "Nom absent.";
+		$tabErreur[] = "* Nom absent.";
 	if (!$user->mdp)
-    $tabErreur[] = "Prénom absent.";
+    $tabErreur[] = "* Prénom absent.";
   if (!$user->telephone)
-    $tabErreur[] = "Téléphone absent.";
+    $tabErreur[] = "* Téléphone absent.";
   if (!$user->log)
-		$tabErreur[] = "Identifiant absent.";
+		$tabErreur[] = "* Identifiant absent.";
 	if (!$user->mdp)
-    $tabErreur[] = "Mot de passe absent.";
+    $tabErreur[] = "* Mot de passe absent.";
   
   $user->sauver();
   $user->crypterMdp();
@@ -46,7 +46,7 @@ if (filter_input(INPUT_POST, 'submit')) {
         </div>
         <div class="row">
             <div class="form_form col-6">
-                <div class="erreur"><?= implode('<br/>', $tabErreur) ?></div>
+                <div class="erreur" style="color:red"><?= implode('<br/>', $tabErreur) ?></div>
                 <form name="form_formulaire" method="post">
                     <input class="form-control" name="nom" value="" placeholder="Nom" maxlength="50" required="required"/>
                     <input class="form-control" name="prenom" value="" placeholder="Prénom" maxlength="20" required="required"/>
@@ -72,7 +72,9 @@ if (filter_input(INPUT_POST, 'submit')) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
             breakpoint: 868,
-            position: 'static'
+            position: 'static',
+            phoneBtn: '0612604944',
+            locationBtn: 'https://www.google.com/maps'
         });
     });
 </script>
