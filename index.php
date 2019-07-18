@@ -16,13 +16,13 @@ require_once 'class/Cfg.php';
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="img/banner1.jpg" class="w-100" height="700" alt="...">
+                <img src="img/banner31.jpg" class="w-100" height="auto" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/banner2.jpg" class="w-100" height="700" alt="...">
+                <img src="img/banner32.jpg" class="w-100" height="auto" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/banner3.jpg" class="w-100" height="700" alt="...">
+                <img src="img/banner3.jpg" class="w-100" height="auto" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -40,13 +40,13 @@ require_once 'class/Cfg.php';
             <h3 class="section_title">Mes dernières réalisations</h3>
             <div class="card-group text-center">
                 <div class="card" style="margin-right:1px">
-                    <img src="img/appt.jpg" class="card-img-top" alt="...">
+                    <img src="img/appt.jpg" class="card-img-top" height="auto" alt="...">
                     <div class="card-body">
                     <p class="card-text">Appartement 83m2 remanié</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="img/appt1.jpg" class="card-img-top" alt="...">
+                    <img src="img/appt1.jpg" class="card-img-top" height="auto" alt="...">
                     <div class="card-body">
                     <p class="card-text">Appartement 104m2 avec extension</p>
                     </div>
@@ -57,47 +57,35 @@ require_once 'class/Cfg.php';
     <section id="meuble" class="pt-4">
         <div class="container py-0">
             <h3 class="section_title">Mes Meubles</h3> 
-            <div class="row">
-                <div class="card-group text-center">
-                    <div class="card">
-                        <a href="javascript:detail(11)" class="index-card">
-                        <img src="img/prod_11_v.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="name card-title">Guéridon</h5>
-                            <span class="marque"><?= Cfg::APP_TITRE ?></span>
-                            <p class="price card-text">309,90€</p>
-                        </a>
-                        </div>
+            <div class="card-group text-center">
+                <div class="card"> 
+                    <a href="javascript:detail(12)">
+                    <img src="img/prod_12_v.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="name card-title">Banc</h5>
+                        <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                        <p class="price card-text">109,90€</p>
+                    </a>
                     </div>
-                    <div class="card">
-                        <a href="javascript:detail(12)">
-                        <img src="img/prod_12_v.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="name card-title">Banc</h5>
-                            <span class="marque"><?= Cfg::APP_TITRE ?></span>
-                            <p class="price card-text">109,90€</p>
-                        </a>
-                        </div>
+                </div>
+                <div class="card">
+                    <a href="javascript:detail(13)">
+                    <img src="img/prod_13_v.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="name card-title">Banquette</h5>
+                        <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                        <p class="price card-text">219,90€</p>
+                    </a>
                     </div>
-                    <div class="card">
-                        <a href="javascript:detail(13)">
-                        <img src="img/prod_13_v.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="name card-title">Banquette</h5>
-                            <span class="marque"><?= Cfg::APP_TITRE ?></span>
-                            <p class="price card-text">219,90€</p>
-                        </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="javascript:detail(14)">
-                        <img src="img/prod_14_v.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="name card-title">Chauffeuse</h5>
-                            <span class="marque"><?= Cfg::APP_TITRE ?></span>
-                            <p class="price card-text">199,90€</p>
-                        </a>
-                        </div>
+                </div>
+                <div class="card">
+                    <a href="javascript:detail(14)">
+                    <img src="img/prod_14_v.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="name card-title">Chauffeuse</h5>
+                        <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                        <p class="price card-text">199,90€</p>
+                    </a>
                     </div>
                 </div>
             </div> 

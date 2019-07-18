@@ -36,10 +36,10 @@ $tabProduit = $categorie->getTabProduit();
             <?php foreach ($tabProduit as $produit) {
                 $id = $produit->id_produit 
             ?>
-            <div class="col-6 col-lg-4 col-xl-4 ">
+            <div class="col-12 col-lg-6 col-xl-4 ">
                 <div class="category_product text-center mb-5" onclick="detail(<?= $id ?>)">
                     <div class="category_image">
-                    <img src="img/prod_<?= $id ?>_v.jpg" width="300" height="300" alt="">
+                    <img src="img/prod_<?= $id ?>_v.jpg" height="auto">
                     </div>
                     <div class="category_description">
                         <h5 class="name"><?= $produit->nom ?></h5>

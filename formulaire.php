@@ -10,20 +10,21 @@ if (filter_input(INPUT_POST, 'submit')) {
   $user->telephone = filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 	$user->log = filter_input(INPUT_POST, 'log', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $user->mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-  if (!$user->nom)
+    if (!$user->nom)
 		$tabErreur[] = "* Nom absent.";
 	if (!$user->mdp)
     $tabErreur[] = "* Prénom absent.";
-  if (!$user->telephone)
+    if (!$user->telephone)
     $tabErreur[] = "* Téléphone absent.";
-  if (!$user->log)
-		$tabErreur[] = "* Identifiant absent.";
+    if (!$user->log || $user->logExiste())
+    $tabErreur[] = "* Email absent ou déjà existant.";
 	if (!$user->mdp)
     $tabErreur[] = "* Mot de passe absent.";
-  
-  $user->sauver();
-  $user->crypterMdp();
-  header('Location:login.php');
+    if (!$tabErreur) { 
+        $user->sauver();
+        $user->crypterMdp();
+        header('Location:login.php');
+    }
   }
 
 ?>

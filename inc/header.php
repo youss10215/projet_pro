@@ -22,7 +22,7 @@ $tabCategorie = Categorie::tab();
                 <ul class="profil m-0 list-unstyled list-inline">
                     <?php if ($user) {?>
                     <li class="list-inline-item align-middle">
-                    Bonjour <?= $user->prenom ?>  
+                        <?= $user->prenom ?>  
                     </li>
                     <li class="list-inline-item align-middle">
                         <a href="logout.php">

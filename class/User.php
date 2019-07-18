@@ -32,6 +32,14 @@ class User extends AbstractUser {
   		$mdp = password_hash($this->mdp, PASSWORD_DEFAULT);
   		$req = "UPDATE user SET mdp = {$db->esc($mdp)} WHERE id_user = {$this->id_user}";
   		$db->xeq($req);
-	}
+    }
+    
+    public function logExiste() {
+        $db = DBMySQL::getInstance();
+        $id_user = $this->id_user ?: 0;
+        //$id_produit = $this->id_produit ? $this->id_produit : 0;
+        $req = "SELECT * FROM user WHERE log = {$db->esc($this->log)} AND id_user != {$id_user}";
+        return (bool) $db->xeq($req)->prem(self::class);
+}
 
 }

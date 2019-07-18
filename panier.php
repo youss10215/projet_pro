@@ -5,6 +5,13 @@ if(!isset($panier)){
     header("Location:panierVide.php");
     exit;
 }
+if (filter_input(INPUT_POST, 'submit')) {
+    $total_commande = filter_input(INPUT_POST, 'total', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $_SESSION['total'] = $total_commande;
+    $panier;
+    header('Location:commander.php');
+	exit;
+}
 
 ?>
 <!DOCTYPE html>
@@ -46,6 +53,7 @@ if(!isset($panier)){
                     </thead>
                     <tbody>
                     <?php
+                    $total = 0;
                     foreach($panier as $element){
                         $id = $element[0]->id_produit;
                         $nom = $element[0]->nom;
@@ -54,6 +62,7 @@ if(!isset($panier)){
                         $quantite = $element[1];
                         $prix = $element[0]->prix;
                         $sousTotal = $element[1] * $element[0]->prix;
+                        $total += $sousTotal;
                     ?>
                         <tr>
                             <td class="cart_thumbnail text-center"><img src="img/prod_<?= $id ?>_t.jpg" alt=""></td>
@@ -78,6 +87,7 @@ if(!isset($panier)){
                 <div class="cart_total col-6 offset-6">
                     <span class="cart_total_span">Total panier</span>
                     <table class="table_total mt-4">
+                    <form name="form_panier" method="post">
                         <tbody>
                             <tr>
                                 <th>Livraison</th>
@@ -85,12 +95,15 @@ if(!isset($panier)){
                             </tr>
                             <tr>
                                 <th>Total</th>
-                                <td id="total"></td>
+                                <input type="hidden" name="total" value="<?= $total ?>">
+                                <td><?= $total ?>€</td>
                             </tr>
                         </tbody>
                     </table>
                     <div>
-                        <button class="check_out" onclick="commander(queryString)">valider la commande</button>
+                    <input class="check_out" type="submit" name="submit" onclick="confirm()"/>
+                    </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -98,16 +111,6 @@ if(!isset($panier)){
         </div>
     </div>
 </body>
-<script>
-    let prix = document.querySelectorAll("#prix"); 
-    let total = 0;
-    for(price of prix){
-        total += Number(price.textContent);
-    }
-    document.querySelector("#total").innerHTML = total;
-    let queryString = "?" + total;
-    console.log(queryString);
-</script>
 <script src="js/panier.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
