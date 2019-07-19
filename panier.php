@@ -12,7 +12,6 @@ if (filter_input(INPUT_POST, 'submit')) {
     header('Location:commander.php');
 	exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,7 +50,7 @@ if (filter_input(INPUT_POST, 'submit')) {
                             <th class="cart_remove" ></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="line_cart">
                     <?php
                     $total = 0;
                     foreach($panier as $element){
@@ -101,8 +100,8 @@ if (filter_input(INPUT_POST, 'submit')) {
                         </tbody>
                     </table>
                     <div>
-                    <input class="check_out" type="submit" name="submit" onclick="confirm()"/>
-                    </div>
+                    <input class="check_out" type="submit" name="submit"/>
+                    </div> 
                     </form>
                     </div>
                 </div>
@@ -129,5 +128,5 @@ if (filter_input(INPUT_POST, 'submit')) {
             locationBtn: 'https://www.google.com/maps'
         });
     });
-</script> 
+</script>
 </html>

@@ -41,6 +41,7 @@ if (filter_input(INPUT_POST, 'submit')) {
             </nav>
         </div>
         <section>
+            <button onclick="increaseCart()">Add to cart</button>
             <div class="product py-5 mt-4 mb-5">
                 <div class="row position-relative">
                     <div class="product_image col-12 col-lg-7 col-xl-6">
@@ -55,7 +56,7 @@ if (filter_input(INPUT_POST, 'submit')) {
                         <div class="product_cart">
                         <form class="input-group" name="form_detail"  method="post">
                             <input type="number" name="quantite" value="1" min="1" step="1"style="width:10%"/><br/>
-                            <input type="submit" name="submit" class="check_out" value="Ajouter au panier" />
+                            <input  type="submit" name="submit" class="check_out" value="Ajouter au panier"/>
                         </form>
                         </div>
                     </div>
@@ -99,6 +100,6 @@ if (filter_input(INPUT_POST, 'submit')) {
             locationBtn: 'https://www.google.com/maps'
         });
     });
-</script> 
+</script>
 </body>
 </html>
