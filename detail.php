@@ -19,7 +19,7 @@ if (filter_input(INPUT_POST, 'submit')) {
     }
     $_SESSION['id_produit'][$id_produit][] = $produit;
     $_SESSION ['id_produit'][$id_produit][] = $quantite;
-    header("Location:panier.php");
+    header("Location:detail.php?id_produit=$id_produit");
     exit;
 }
 ?>
