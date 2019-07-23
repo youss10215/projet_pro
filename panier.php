@@ -65,17 +65,16 @@ if (filter_input(INPUT_POST, 'submit')) {
                     ?>
                         <tr>
                             <td class="cart_thumbnail text-center"><img src="img/prod_<?= $id ?>_t.jpg" alt=""></td>
-                            <td class="cart_nom">
-                                <span><?= $nom ?> -</span>
-                                <span class="cart_ref"><?= $ref?> ,</span>
-                                <span class="cart_couleur"><?= $couleur ?></span>
+                            <td>
+                                <span class="cart_nom"><?= $nom ?></span><br>
+                                <span class="cart_couleur"><?= $couleur ?></span><br>
+                                <span class="cart_ref">Ref: <?= $ref?></span>
                             </td>
                             <td class="cart_price">
-                                <span><?= $prix ?></span>
-                                <span>€</span>
+                                <span><?= $prix ?>€</span>
                             </td>
                             <td class="cart_quantity"><?= $quantite ?></td>
-                            <td id="prix" class="cart_subtotal"><?= $sousTotal ?></td>
+                            <td id="prix" class="cart_subtotal"><?= $sousTotal ?>€</td>
                             <td class="cart_remove" onclick="supprimerPanier(<?= $id ?>)"><i class="fas fa-times"></i></td>
                         </tr>
                     </tbody>
@@ -83,7 +82,7 @@ if (filter_input(INPUT_POST, 'submit')) {
                 </table>
             </div>
             <div class="total_part row">
-                <div class="cart_total col-6 offset-6">
+                <div class="cart_total col-12 offset-12 col-md-6 offset-md-6">
                     <span class="cart_total_span">Total panier</span>
                     <table class="table_total mt-4">
                     <form name="form_panier" method="post">
@@ -122,7 +121,7 @@ if (filter_input(INPUT_POST, 'submit')) {
     jQuery(document).ready(function($) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
-            breakpoint: 868,
+            breakpoint: 992,
             position: 'static',
             phoneBtn: '0612604944',
             locationBtn: 'https://www.google.com/maps'

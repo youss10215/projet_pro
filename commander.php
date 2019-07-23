@@ -35,7 +35,7 @@ if (filter_input(INPUT_POST, 'submit')) {
     jQuery(document).ready(function($) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
-            breakpoint: 868,
+            breakpoint: 992,
             position: 'static',
             phoneBtn: '0612604944',
             locationBtn: 'https://www.google.com/maps'

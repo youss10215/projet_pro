@@ -46,7 +46,7 @@ if (filter_input(INPUT_POST, 'submit')) {
             <h2>Créer mon compte</h2>
         </div>
         <div class="row">
-            <div class="form_form col-6">
+            <div class="form_form col-12 col-lg-6">
                 <div class="erreur" style="color:red"><?= implode('<br/>', $tabErreur) ?></div>
                 <form name="form_formulaire" method="post">
                     <input class="form-control" name="nom" value="" placeholder="Nom" maxlength="50" required="required"/>
@@ -55,7 +55,7 @@ if (filter_input(INPUT_POST, 'submit')) {
                     <input class="form-control" type="email" name="log" value="<?= $register_log ?>" placeholder="E-mail" maxlength="30" required="required" multiple/>
                     <input class="form-control" type="password" name="mdp" value="<?= $register_mdp ?>" placeholder="Mot de passe" maxlength="255"  required="required"/>
                     <div class="">
-                    <input class="check_out" type="submit" name="submit" value="S'inscrire" style="width:50%"/>
+                    <input class="check_out" type="submit" name="submit" value="S'inscrire"/>
                     </div>
                 </form>
             </div>
@@ -72,7 +72,7 @@ if (filter_input(INPUT_POST, 'submit')) {
     jQuery(document).ready(function($) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
-            breakpoint: 868,
+            breakpoint: 992,
             position: 'static',
             phoneBtn: '0612604944',
             locationBtn: 'https://www.google.com/maps'

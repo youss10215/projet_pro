@@ -15,7 +15,7 @@ if (filter_input(INPUT_POST, 'connexion')) {
 		header('Location:index.php');
 		exit;
 	}
-	$tabErreur[] = "Identifiant ou mot de passe incorrect.";
+	$tabErreur[] = "* Identifiant ou mot de passe incorrect.";
 }
 if (filter_input(INPUT_POST, 'register')) {
 	// Récupérer les données POST.
@@ -47,8 +47,8 @@ if (filter_input(INPUT_POST, 'register')) {
         </div>
         <div class="row">
             <div class="col-6">
-                <h4>Connexion</h4>
-                <div class="erreur"><?= implode('<br/>', $tabErreur) ?></div>
+                <h5>Connexion</h5>
+                <div class="erreur_login"><?= implode('<br/>', $tabErreur) ?></div>
                 <form name="form_login" action="login.php" method="post">
                     <div class="mb-3">
                         <input class="form-control form-control-sm" name="log" placeholder="Identifiant" size="20" maxlength="20" required="required"/>
@@ -62,7 +62,8 @@ if (filter_input(INPUT_POST, 'register')) {
                 </form>
             </div>
             <div class="col-6">
-                <h4>S'enregistrer</h4>
+                <h5>S'enregistrer</h5>
+                <div class="erreur_login"></div>
                 <form name="form_register" action="login.php" method="post">
                     <div class="mb-3">  
                         <input class="form-control form-control-sm" name="log" placeholder="E-mail" maxlength="250" required="required"/>
@@ -89,7 +90,7 @@ if (filter_input(INPUT_POST, 'register')) {
     jQuery(document).ready(function($) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
-            breakpoint: 868,
+            breakpoint: 992,
             position: 'static',
             phoneBtn: '0612604944',
             locationBtn: 'https://www.google.com/maps'

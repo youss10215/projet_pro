@@ -23,8 +23,12 @@
 .cart_name{
     width: 553px;
 } 
+.cart_nom{
+    font-weight: 600;
+}
 .cart_ref {
     font-size: 10px;
+    color: #8F8F8F;
 }
 .cart_couleur{
     font-size: 10px; 
@@ -33,6 +37,7 @@
     text-align: center;
 }
 .cart_remove{
+    text-align: center;
     cursor: pointer;
 }
 .empty_total{
@@ -67,9 +72,6 @@
     }
 }
 #total::after{
-    content: '€'
-}
-.cart_subtotal::after{
     content: '€'
 }
 .check_out:hover {
@@ -110,4 +112,11 @@
         font-weight: 300;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .cart_nom{
+        font-size: .6rem;
+        line-height: 1rem;
+        }
+    }
 

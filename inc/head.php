@@ -9,5 +9,6 @@
     <link href="dist/app.css" rel="stylesheet" type="text/css"/>
     <!-- Stellarnav -->
     <link rel="stylesheet" type="text/css" media="all" href="dist/stellarnav.css">
+    <link href="dist/ihover.css" rel="stylesheet">
     <title><?= Cfg::APP_TITRE ?></title>
 </head>

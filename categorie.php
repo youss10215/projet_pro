@@ -36,19 +36,24 @@ $tabProduit = $categorie->getTabProduit();
             <?php foreach ($tabProduit as $produit) {
                 $id = $produit->id_produit 
             ?>
-            <div class="col-12 col-lg-6 col-xl-4 ">
-                <div class="category_product text-center mb-5" onclick="detail(<?= $id ?>)">
-                    <div class="category_image">
+            <div class="col-12 col-sm-6 col-lg-6 col-xl-4 ">
+                <div class=" ih-item square effect6 colored top_to_bottom category_product" onclick="detail(<?= $id ?>)">
+                <a href="#">
+                    <div class="category_image img">
                     <img src="img/prod_<?= $id ?>_v.jpg" height="auto">
                     </div>
-                    <div class="category_description">
-                        <h5 class="name"><?= $produit->nom ?></h5>
+                    <div class="info">
+                        <p>Voir les détails</p>
+                    </div>
+                </a>   
+                </div>
+                <div class="category_description text-center mb-5">
+                <h5 class="name"><?= $produit->nom ?></h5>
                         <span class="marque"><?= Cfg::APP_TITRE ?></span>
                         <span class="price"><?= $produit->prix ?>€</span>
-                    </div>
                 </div>
             </div>
-            <?php }?>    
+            <?php }?>  
         </div>
     </div>  
 <script src="js/categorie.js" type="text/javascript"></script>
@@ -63,7 +68,7 @@ $tabProduit = $categorie->getTabProduit();
     jQuery(document).ready(function($) {
         jQuery('.stellarnav').stellarNav({
             theme:'light',
-            breakpoint: 868,
+            breakpoint: 992,
             position: 'static',
             phoneBtn: '0612604944',
             locationBtn: 'https://www.google.com/maps'

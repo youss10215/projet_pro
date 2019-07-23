@@ -240,8 +240,13 @@ label {
   width: 553px;
 }
 
+.cart_nom {
+  font-weight: 600;
+}
+
 .cart_ref {
   font-size: 10px;
+  color: #8F8F8F;
 }
 
 .cart_couleur {
@@ -253,6 +258,7 @@ label {
 }
 
 .cart_remove {
+  text-align: center;
   cursor: pointer;
 }
 
@@ -294,10 +300,6 @@ label {
 }
 
 #total::after {
-  content: '€';
-}
-
-.cart_subtotal::after {
   content: '€';
 }
 
@@ -345,6 +347,13 @@ label {
   font-weight: 300;
 }
 
+@media screen and (max-width: 767px) {
+  .cart_nom {
+    font-size: .6rem;
+    line-height: 1rem;
+  }
+}
+
 .form_form .form-control {
   margin-bottom: 20px;
 }
@@ -352,5 +361,13 @@ label {
 .erreur {
   margin-bottom: 10px;
   color: red;
+  font-size: 0.9rem;
+}
+
+.erreur_login {
+  height: 30px;
+  width: 100%;
+  color: red;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=app.css.map */

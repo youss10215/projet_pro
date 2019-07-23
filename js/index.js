@@ -5,6 +5,6 @@ function categorie(id_categorie){
 let n=0;
 function increaseCart(){
     n += 1;
-    document.getElementById('number').innerHTML=n;
+    document.getElementById('number').innerHTML= n;
 }
 
