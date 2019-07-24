@@ -36,22 +36,18 @@ $tabProduit = $categorie->getTabProduit();
             <?php foreach ($tabProduit as $produit) {
                 $id = $produit->id_produit 
             ?>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4">
-                <div class="ih-item square effect6 colored top_to_bottom category_product" onclick="detail(<?= $id ?>)">
-                <a href="#">
-                    <div class="category_image img">
-                    <img src="img/prod_<?= $id ?>_v.jpg" width="100%" height="auto">
-                    </div>
-                    <div class="info">
-                        <p>Voir les détails</p>
-                    </div>
-                </a>   
+            <div class="col-6 col-lg-4 pb-5">
+                <div class="ih-item square effect6 colored top_to_bottom text-center" onclick="detail(<?= $id ?>)">
+                    <a href="#">
+                        <img  class="category_image" src="img/prod_<?= $id ?>_v.jpg" height="auto">
+                        <div class="info"><p>Voir les détails</p></div>
+                    </a>
                 </div>
-                <div class="category_description text-center mb-5">
-                <h5 class="name"><?= $produit->nom ?></h5>
-                        <span class="marque"><?= Cfg::APP_TITRE ?></span>
-                        <span class="price"><?= $produit->prix ?>€</span>
-                </div>
+                <div class="category-descrition col-6 col-lg-4 col-xl-3 text-center">
+                    <h5 class="name"><?= $produit->nom ?></h5>
+                    <span class="marque"><?= Cfg::APP_TITRE ?></span>
+                    <span class="price"><?= $produit->prix ?>€</span> 
+                </div> 
             </div>
             <?php }?>  
         </div>

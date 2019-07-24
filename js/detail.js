@@ -12,7 +12,7 @@ function supprimer(id_produit) {
         let url = `supprimer.php?id_produit=${id_produit}`;
         fetch(url).then(response => {
             if (response.ok)
-                location.reload();
+                location = `index.php`
         })
         .catch(error => console.error(error));
 }
