@@ -19,7 +19,7 @@ if (filter_input(INPUT_POST, 'submit')) {
     }
     $_SESSION['id_produit'][$id_produit][] = $produit;
     $_SESSION ['id_produit'][$id_produit][] = $quantite;
-    header("Location:detail.php?id_produit=$id_produit");
+    header("Location:panier.php");
     exit;
 }
 ?>
@@ -42,42 +42,46 @@ if (filter_input(INPUT_POST, 'submit')) {
         </div>
         <section>
             <!--<button onclick="increaseCart()">Add to cart</button>-->
-            <div class="product py-5 mb-5">
+            <div class="product py-5">
                 <div class="row position-relative">
                     <div class="product_image col-12 col-lg-7 col-xl-6">
                         <img src="img/prod_<?= $id_produit ?>_p.jpg" width="100%" height="auto" alt="">
                     </div>
                     <div class="product_description col-12 col-lg-5 col-xl-6">
                         <span class="product_marque"><?= Cfg::APP_TITRE ?></span>
-                        <h1 class="product_name"><?= $produit->nom ?></h1>
-                        <a href="#product_detail">Détails</a><br>
-                        <span class="product_price"><?= $produit->prix ?>€</span><br>   
-                        <span>En stock</span>
-                        <div class="product_cart">
-                        <form class="input-group" name="form_detail"  method="post">
-                            <input type="number" name="quantite" value="1" min="1" step="1"style="width:10%"/><br/>
-                            <input  type="submit" name="submit" class="check_out" value="Ajouter au panier"/>
-                        </form>
+                        <h1 class="product_name mb-5"><?= $produit->nom ?></h1>
+                        <span class="product_price"><?= $produit->prix ?>€</span>
+                        <div class="product_detail my-4">
+                            <div>
+                                <span class="detail_desc">Couleur :</span>
+                                <span class="detail_property"><?= $produit->couleur ?></span>
+                            </div>
+                            <div>
+                                <span class="detail_desc">Ref :</span>
+                                <span class="detail_property"><?= $produit->ref ?></span>
+                            </div> 
+                            <div>
+                                <span class="detail_desc">Dimension :</span>
+                                <span class="detail_property"><?= $produit->dimension ?></span>
+                            </div> 
+                        </div>  
+                        <span class="stock">En stock</span>
+                        <div class="product_cart mt-3">
+                            <form class="form_detail" name="form_detail"  method="post">
+                                <input class="form_number mr-4 text-center" type="number" name="quantite" value="1" min="1" step="1"style="width:10%"/>
+                                <input class="check_out detail_button" type="submit" name="submit" class="check_out" style="width:70%" value="Ajouter au panier"/>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="product_detail">
-                <h3 class="section_title">Description détaillée</h3>
-                <div class="row">
-                    <div class="product_detail_description col-8">
-                        <div>Couleur :<?= $produit->couleur ?></div>
-                        <div>Dimensions :<?= $produit->dimension ?></div>
-                        <div>Reférence :<?= $produit->ref ?></div>
-                    </div>
-                    <div class="admin">
-                        <?php if($user && $user->admin == 1 ){ ?>
-                        <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button><br>
-                        <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button><br>
-                        <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button><br>
-                        <button onclick="supprimerImage(event, <?= $produit->id_produit ?>)">Supprimer l'image</button>
-                        <?php } ?>
-                    </div>
+                <div class="admin">
+                    <?php if($user && $user->admin == 1 ){ ?>
+                    <button onclick="ajouter(<?= $produit->id_categorie ?>)">Ajouter</button><br>
+                    <button onclick="modifier(<?= $produit->id_produit ?>)">Modifier</button><br>
+                    <button onclick="supprimer(<?= $produit->id_produit ?>)">Supprimer</button><br>
+                    <button onclick="supprimerImage(event, <?= $produit->id_produit ?>)">Supprimer l'image</button>
+                    <?php } ?>
                 </div>
             </div>
         </section>

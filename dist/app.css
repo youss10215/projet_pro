@@ -210,6 +210,38 @@ label {
   font-size: 2em;
 }
 
+.detail_desc {
+  font-weight: 600;
+  font-size: .75rem;
+}
+
+.detail_property {
+  font-size: .75rem;
+}
+
+.stock {
+  font-size: .85rem;
+}
+
+.form_detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.check_out.detail_button {
+  margin: 0;
+}
+
+.form_number::-webkit-inner-spin-button,
+.form_number::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
 .table_product_cart {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -309,15 +341,15 @@ label {
 }
 
 .check_out {
+  display: block;
+  height: auto;
   color: white;
   font-size: .8rem;
-  height: 3em;
   width: 100%;
-  padding: 1.5em auto;
+  padding: 1.5em;
   margin: 1em auto;
   background-color: #000;
   border: none;
-  border-radius: 3px;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -333,7 +365,6 @@ label {
   background-color: #ebe9eb;
   border: 0;
   display: inline-block;
-  border-radius: 0;
   text-transform: uppercase;
 }
 
@@ -369,5 +400,9 @@ label {
   width: 100%;
   color: red;
   font-size: 0.9rem;
+}
+
+.form-control {
+  padding: 1.5em 1rem;
 }
 /*# sourceMappingURL=app.css.map */
