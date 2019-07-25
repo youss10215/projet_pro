@@ -23,6 +23,7 @@ require_once 'class/Cfg.php';
             <button class="back"><a href="index.php">Retour à l'accueil</a></button>
         </div>
     </div>
+    <?php require_once 'inc/footer.php' ?>
 </body>
 <script src="js/panier.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>

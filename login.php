@@ -51,13 +51,13 @@ if (filter_input(INPUT_POST, 'register')) {
                 <div class="erreur_login"><?= implode('<br/>', $tabErreur) ?></div>
                 <form name="form_login" action="login.php" method="post">
                     <div class="mb-3">
-                        <input class="form-control form-control-sm" name="log" placeholder="Identifiant" size="20" maxlength="20" required="required"/>
+                        <input class="form-control" name="log" placeholder="Identifiant" size="20" maxlength="20" required="required"/>
                     </div>
                     <div class="">
-                        <input class="form-control form-control-sm" type="password" name="mdp" placeholder="Mot de passe" maxlength="250" required="required"/>
+                        <input class="form-control" type="password" name="mdp" placeholder="Mot de passe" maxlength="250" required="required"/>
                     </div>
                     <div class="">
-                        <input class="check_out form-control form-control-sm" type="submit" name="connexion" value="Connexion"/>
+                        <input class="check_out form-control" type="submit" name="connexion" value="Connexion"/>
                     </div>
                 </form>
             </div>
@@ -66,19 +66,19 @@ if (filter_input(INPUT_POST, 'register')) {
                 <div class="erreur_login"></div>
                 <form name="form_register" action="login.php" method="post">
                     <div class="mb-3">  
-                        <input class="form-control form-control-sm" name="log" placeholder="E-mail" maxlength="250" required="required"/>
+                        <input class="form-control" name="log" placeholder="E-mail" maxlength="250" required="required"/>
                     </div>
                     <div class="">
-                        <input class="form-control form-control-sm" type="password" name="mdp" placeholder="Mot de passe" maxlength="250" required="required"/>
+                        <input class="form-control" type="password" name="mdp" placeholder="Mot de passe" maxlength="250" required="required"/>
                     </div>
                     <div class="">
-                        <input class="check_out form-control form-control-sm" type="submit" name="register" value="S'enregister"/>
+                        <input class="check_out form-control" type="submit" name="register" value="S'enregister"/>
                     </div>
                 </form>
             </div>
         </div>
-        
     </div>
+    <?php require_once 'inc/footer.php' ?>
 <script src="js/index.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

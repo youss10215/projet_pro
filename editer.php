@@ -83,7 +83,7 @@ $maj = !$id ?: (new SplFileInfo("img/prod_{$id}_v.jpg"))->getMTime();
                     <input type="hidden" name="id_produit" value="<?= $produit->id_produit ?>"/>
                         <div class="form-group">
                             <label for="categorie">Categorie</label>
-                            <select class="form-control" id="categorie" name="id_categorie">
+                            <select class="custom-select" id="categorie" name="id_categorie">
                             <?php
                             foreach ($tabCategorie as $categorie) {
                                 $selected = $categorie->id_categorie == $produit->id_categorie ? 'selected="selected"' : '';

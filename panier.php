@@ -108,6 +108,7 @@ if (filter_input(INPUT_POST, 'submit')) {
             <?php } ?>
         </div>
     </div>
+    <?php require_once 'inc/footer.php' ?>
 </body>
 <script src="js/panier.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
