@@ -37,7 +37,7 @@ $tabCategorie = Categorie::tab();
                         <a href="panier.php">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
-                        <span id="box"><p id="number">0</p></span>
+                        <!--<span id="box"><p id="number">0</p></span>-->
                     </li>
                 </ul>
             </div>

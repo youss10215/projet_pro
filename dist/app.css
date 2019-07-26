@@ -445,6 +445,10 @@ label {
   font-size: 40px;
 }
 
+.footer_right {
+  margin-top: 40px;
+}
+
 footer .block-links span {
   text-transform: uppercase;
   font-weight: 700;
@@ -466,7 +470,7 @@ footer .block-links a {
   font-weight: 200;
   text-transform: uppercase;
   font-size: .7rem;
-  color: #000;
+  color: #aaa;
   display: block;
 }
 
