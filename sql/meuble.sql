@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 10 juil. 2019 à 10:26
+-- Généré le :  ven. 26 juil. 2019 à 14:18
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 --
 
 INSERT INTO `categorie` (`id_categorie`, `nom`) VALUES
-(1, 'Réalisations avant/après'),
+(1, 'Réalisations avant-après'),
 (2, 'Meuble sur mesure'),
 (3, 'Mes créations');
 
@@ -96,27 +96,40 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `stock` smallint(2) DEFAULT NULL,
   PRIMARY KEY (`id_produit`),
   KEY `id_categorie` (`id_categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `produit`
 --
 
 INSERT INTO `produit` (`id_produit`, `id_categorie`, `nom`, `couleur`, `dimension`, `ref`, `prix`, `stock`) VALUES
-(1, 1, 'Commode', 'noir', '120 x 180 x 60', 'COM', '249.49', 2),
-(2, 3, 'Table basse', 'marron', '50 x 120 x 60', 'TBM', '149.99', 1),
-(3, 3, 'Fauteuil', 'Jaune de damas', '150 x 40', 'FAU', '499.99', 4),
-(4, 1, 'Meuble TV', 'Bois', '60 x 190 x 50', 'MTV', '339.99', 1),
-(5, 3, 'Lampe de chevet', 'Laiton', '30 X10', 'LACH', '49.99', 8),
-(6, 1, 'Canapé', 'Bleu des mers du sud', '120 x 200 x 70', 'CANA', '599.99', 1),
-(7, 2, 'Meuble haut cuisine', 'Noir', '60 X 60 X 40', 'MBHCA', '79.99', 3),
-(8, 2, 'Bureau', 'Bois', '1230 X 60 40', 'BUR', '150.00', 4),
-(9, 2, 'Lit', 'Brun', '200 X 180 X 90', 'LIT', '400.00', 2),
-(10, 1, 'Bougeoir', 'Gris anthracite', '30 X10', 'BOU', '50.00', 10),
-(11, 1, 'Guéridon', 'Merisier', '120 x 40 x 40 ', 'GUED', '309.00', 3),
-(12, 2, 'Banc', 'Blanc', '50 x 100 X 40', 'BAN', '109.90', 2),
-(13, 2, 'Bnaquette', 'Emeraude', '80 X 140 40', 'BANQ', '219.90', 1),
-(14, 3, 'Chauffeuse', 'Turquoise', '120 x 60 x 40', 'CHAUF', '199.90', 1);
+(1, 1, 'Commode', 'noir', '120 x 180 x 60', '6147147', '249.49', 2),
+(2, 2, 'Table basse', 'Beige', '50 x 120 x 60', '6141414', '149.99', 1),
+(3, 3, 'Fauteuil', 'Bordeaux', '150 x 40', '6753951', '499.99', 4),
+(4, 1, 'Meuble TV', 'Bois', '60 x 190 x 50', '6112366', '339.99', 1),
+(5, 3, 'Lampe de chevet', 'Métal', '30 X 10', '6258964', '49.99', 8),
+(6, 1, 'Canapé', 'Bleu des mers du sud', '120 x 200 x 70', '6669321', '599.99', 1),
+(7, 2, 'Meuble suspendu', 'Bois', '60 X 60 X 40', '6753756', '79.99', 3),
+(8, 2, 'Bureau', 'Bois', '1230 X 60 40', '6487259', '150.00', 4),
+(9, 2, 'Lit', 'Brun', '200 X 180 X 90', '6131954', '400.00', 2),
+(10, 3, 'Cadre', 'Blanc', '30 X10', '6767915', '50.00', 10),
+(11, 1, 'Guéridon', 'Merisier', '120 x 40 x 40 ', '6314525', '309.00', 3),
+(12, 2, 'Banc', 'Blanc', '50 x 100 X 40', '6145632', '109.90', 2),
+(13, 2, 'Banquette', 'Emeraude', '80 X 140 X 40', '6258963', '219.90', 1),
+(14, 3, 'Chauffeuse', 'Turquoise', '120 x 60 x 40', '6396354', '199.90', 1),
+(15, 3, 'Console', 'Noir', '120 x 90 x 40', '6598541', '359.90', 2),
+(16, 3, 'Commode', 'Noyer', '90 X 50 X 40', '6198368', '405.90', 3),
+(17, 3, 'Horloge', 'Multicolore', '80', '6412399', '99.90', 5),
+(18, 3, 'Tabouret', 'Blanc', '130 X 40', '6549871', '159.90', 10),
+(19, 1, 'Vaisselier', 'Chêne', '150 x 80 X 40', '631496', '549.90', 1),
+(20, 3, 'Buffet', 'Naturel', '160 X 80 X 50', '6279865', '699.99', 1),
+(21, 2, 'Panier', 'Naturel Bleu', '35 X 38', '6274951', '49.90', 8),
+(22, 2, 'Fauteuil de table', 'Vert', '40 X 48 X 45', '6868975', '219.90', 4),
+(23, 2, 'Bibliothéque', 'Bois', '60 X 175 X 40', '6622489', '599.99', 1),
+(24, 1, 'Table pliante', 'Eucalyptus', '60 X 74 X 60', '6321988', '99.99', 1),
+(25, 1, 'Fauteuil', 'Multicolore', '68 X 81 X 78', '6469782', '129.90', 1),
+(26, 1, 'Banquette', 'Ocre', '132 X 81 X 78', '6555878', '499.90', 1),
+(27, 1, 'Coffre', 'Noir', '100 X 50 X 40', '66698312', '199.99', 1);
 
 -- --------------------------------------------------------
 
@@ -137,14 +150,7 @@ CREATE TABLE IF NOT EXISTS `session` (
 --
 
 INSERT INTO `session` (`sid`, `data`, `date_maj`) VALUES
-('30m81v19jjf52jdqllmtpm2oel', 'id_user|s:2:\"50\";', '2019-07-04 16:32:24'),
-('5hk13q4a5i9r6i641cn8pjd66b', '', '2019-07-05 17:06:35'),
-('7f2mgl2m7895ogdiub26f12od1', '', '2019-07-10 09:55:25'),
-('8ktj5rd3424ib4suve296qkpk5', 'id_user|s:2:\"53\";', '2019-07-09 16:37:49'),
-('drikdunav87cldbl0q07l8ivt1', 'id_user|s:2:\"51\";', '2019-07-03 13:34:38'),
-('j3ari6qk4vnevfmi4tc8jq9gch', '', '2019-07-08 17:00:51'),
-('qv0jmkh1qn5r2370i9d33c8cgi', '', '2019-07-10 12:25:12'),
-('u4ed7f7bpmnv5sv9k0qv2d7vlk', 'id_produit|a:1:{i:7;a:2:{i:0;O:7:\"Produit\":9:{s:10:\"id_produit\";s:1:\"7\";s:12:\"id_categorie\";s:1:\"2\";s:3:\"nom\";s:19:\"Meuble haut cuisine\";s:7:\"couleur\";s:19:\"Bleu des mer du sud\";s:9:\"dimension\";s:12:\"60 X 60 X 40\";s:3:\"ref\";s:5:\"MBHCA\";s:4:\"prix\";s:5:\"79.99\";s:5:\"stock\";s:1:\"3\";s:18:\"\0Produit\0categorie\";N;}i:1;i:1;}}', '2019-07-03 16:57:21');
+('pus2a3kr8ihgq8iusrgimd7kgr', 'log|s:4:\"nary\";mdp|s:4:\"nary\";id_user|s:2:\"64\";total|s:5:\"199.9\";', '2019-07-26 16:09:59');
 
 -- --------------------------------------------------------
 
@@ -162,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `telephone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `admin` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
@@ -173,7 +179,17 @@ INSERT INTO `user` (`id_user`, `log`, `mdp`, `nom`, `prenom`, `telephone`, `admi
 (51, 'yo@yo', '$2y$10$XzuX7gdm/w7NiHsPgCRV6erFRxBmQIymo0WWtjTwrIxuaCmvSXHSm', 'yo', 'yo', 'yo', 0),
 (52, 'pat@yahoo.fr', '$2y$10$8yRdBCRsM4cdmHOGbskDpOi3L6lh9XjDq3J7WW8qKITgMGht52aru', 'patrick', 'patrick', '0101010101', 0),
 (53, 'no@no', '$2y$10$B/Mfpjdm7pAQpKCZUzmTP.0vPZkh/61/5E0LcBD9v3.wHVKRnOTwW', 'no', 'no', '0101010101', 0),
-(54, 'no@no', '$2y$10$C/RmrME0S6AdoHt9MnT5H.YkRdIxhiDS./4SRZbs99rvBL8YFUITS', 'no', 'no', '0101010101', 0);
+(54, 'no@no', '$2y$10$C/RmrME0S6AdoHt9MnT5H.YkRdIxhiDS./4SRZbs99rvBL8YFUITS', 'no', 'no', '0101010101', 0),
+(55, 'pat@ki.fr', '$2y$10$93iwc8CpozR2sc6tY7V7kOixnqGi/OMkdd478l42HMOP.qpW3Nb2a', 'Miroir', 'test', '0101010101', 0),
+(56, 'paul@paul.fr', '$2y$10$xeBp9kt4x0nUhXXfT5NtNO1e9H97/H6.PcnyEWuc7uyxP1ZJNHWEq', 'paul', 'paul', '0101010101', 0),
+(57, 'yo@yo', '$2y$10$WXp3S05wzgSyut1ed2U2D.kefDahXzE/Gx2PoaePwM.uqPYz2DnEC', 'paul', 'paul', 'paul', 0),
+(58, 'yo@yo', '$2y$10$y4DGthOIS7EuAWgeVnv88e9F9BFv1In06YIoMR4v9LKcVQHvZDD9W', 'patrick', 'patrick', 'patrick', 0),
+(59, 'paul@gmail.com', '$2y$10$J.x9jnWqI1TqmptsBOsr9.3tMKShdO2EmdGDByOlcChS15wZsf/Y6', 'Paul', 'Paul', '0102030405', 0),
+(60, 'youss@yahoo.fr', '$2y$10$Y7a5K1IjiadOKDE11nVVGeQP.1AK351bFGB85BM7s7D38YubmKwGm', 'paul', 'paul', 'paul', 0),
+(61, 'ma@ma', '$2y$10$rid7X/iWPxepZOS.Z4kknuQnF9mTx3dEpcIVlGAz8nH0Ht5uokLP6', 'Faroid', 'Marie Antoinette  Mr', 'Marie antaoinette  j', 0),
+(62, 'pou@gmail.fr', '$2y$10$l3m6MCyKPRWVEwfSyddCWuHPFn.8NOmPqTqS2Mem5oKmCTbKvJSyC', 'youss', 'patrick', 'paul', 0),
+(63, 'paul1@paul.fr', '$2y$10$ZdSIGgM4L.jAh/P1uTa0zOkWGuJv4kyhLUPVAupGNxSkPM8LZ/ADC', 'Paul', 'Paul', 'Paul', 0),
+(64, 'nary@cc.fr', '$2y$10$dU1BC8dxVbVXiNPKFJidAuMJqYZsP1pxIvcFVAYOEs3nPtJl.X/QO', 'Nary', 'Randria', '0606060606', 0);
 
 --
 -- Contraintes pour les tables déchargées
