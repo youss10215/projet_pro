@@ -1,10 +1,6 @@
 <?php
 require_once 'class/Cfg.php';
-$panier = $_SESSION['id_produit'];
-if(!isset($panier)){
-    header("Location:panierVide.php");
-    exit;
-}
+$panier = isset($_SESSION['id_produit'])? $_SESSION['id_produit'] : header("Location:panierVide.php") ;
 if (filter_input(INPUT_POST, 'submit')) {
     $total_commande = filter_input(INPUT_POST, 'total', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $_SESSION['total'] = $total_commande;

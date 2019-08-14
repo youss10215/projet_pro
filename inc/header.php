@@ -2,6 +2,7 @@
 require_once 'class/Cfg.php';
 $user = AbstractUser::getUserSession(User::class);
 $tabCategorie = Categorie::tab();
+$sumCart = isset($_SESSION['id_produit']) ? count($_SESSION['id_produit']) : 0 ; 
 ?> 
 <header id="header" class="container-fluid pb-4">
     <div id="top-nav row">
@@ -37,7 +38,9 @@ $tabCategorie = Categorie::tab();
                         <a href="panier.php">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
-                        <!--<span id="box"><p id="number">0</p></span>-->
+                        <?php if ($sumCart > 0) {?>
+                        <span id="box"><p id="number"><?= $sumCart ?></p></span>
+                        <?php } ?>
                     </li>
                 </ul>
             </div>
