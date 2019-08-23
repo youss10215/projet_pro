@@ -1,11 +1,14 @@
 user: id_user[INT UNSIGNED AUTO_INCREMENT],log[VARCHAR(30)],mdp[VARCHAR(250)],nom[VARCHAR(30)],prenom[VARCHAR(20)],telephone[VARCHAR(20)],admin[TINYINT(1)]
-commande: id_commande[INT UNSIGNED AUTO_INCREMENT],date_commande[DATETIME],total[DECIMAL(8,2)]
-ligne: id_ligne[INT UNSIGNED AUTO_INCREMENT],quantite[SMALLINT(2)],prix[DECIMAL(6,2)]
-produit: id_produit[INT UNSIGNED AUTO_INCREMENT],nom[VARCHAR(50)],couleur[VARCHAR(20)],dimension[VARCHAR(20)],ref[VARCHAR(20)],prix[DECIMAL(6,2)],stock[SMALLINT(2)]
-categorie: id_categorie[INT UNSIGNED AUTO_INCREMENT],nom[VARCHAR(30)]
+:
 session: sid[CHAR(32)],data[MEDIUMTEXT],date_maj[DATETIME]
+:
 
-passer, 11 user, 1N commande
-comporter, 11 commande, 1N ligne
-posseder, 1N ligne, 11 produit
-appartenir, 1N produit, 11 categorie
+passer, 11 commande, 0N user
+ligne: id_ligne[INT UNSIGNED AUTO_INCREMENT],quantite[SMALLINT(2)],prix[DECIMAL(6,2)]
+posseder, 0N produit, 11 ligne
+categorie: id_categorie[INT UNSIGNED AUTO_INCREMENT],nom[VARCHAR(30)]
+
+commande: id_commande[INT UNSIGNED AUTO_INCREMENT],date_commande[DATETIME],total[DECIMAL(8,2)]
+comporter, 11 ligne, 1N commande
+produit: id_produit[INT UNSIGNED AUTO_INCREMENT],nom[VARCHAR(50)],couleur[VARCHAR(20)],dimension[VARCHAR(20)],ref[VARCHAR(20)],prix[DECIMAL(6,2)],stock[SMALLINT(2)]
+appartenir, 11 produit, 0N categorie
